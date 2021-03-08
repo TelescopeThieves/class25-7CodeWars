@@ -75,3 +75,128 @@ function oddOrEven(array) {
         return `odd`
     }
  }
+
+// Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+// a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+// The four operators are "add", "subtract", "divide", "multiply".
+function arithmetic(a, b, operator){
+  //your code here!
+  switch(operator){
+      case 'add':
+      return a + b
+      break
+      case 'subtract':
+      return a - b
+      break
+      case 'multiply':
+      return a * b
+      break
+      case 'divide':
+      return a / b
+      break
+  }
+}
+
+// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits. 
+
+function solution(digits){
+  let bigSequence = 0
+  let arr =  digits.split('').map(num => Number(num))
+  arr.forEach((num,i,a) => {
+    if(Number([a[i],a[i+1],a[i+2],a[i+3],a[i+4]].join('')) > bigSequence){
+      bigSequence = Number([a[i],a[i+1],a[i+2],a[i+3],a[i+4]].join(''))
+    }
+  })
+  return bigSequence
+}
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+
+function stray(numbers) {
+  let arr = numbers.sort((a,b) => a - b)
+  if(arr[0] !== arr[1]){
+      return arr[0]
+    }else return arr[arr.length-1]
+  }
+
+// Your task is to make function, which returns the sum of a sequence of integers.
+// The sequence is defined by 3 non-negative values: begin, end, step.
+// If begin value is greater than the end, function should returns 0
+
+
+const sequenceSum = (begin, end, step) => {
+    // May the Force be with you
+    if(begin > end){
+      return 0
+    }
+    let sum = 0
+    for(let i = begin; i <= end; i += step){
+        sum += i
+    }
+    return sum
+  };
+
+// Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer. Square all numbers k (0 <= k <= n) between 0 and n. Count the numbers of digits d used in the writing of all the k**2. Call nb_dig (or nbDig or ...) the function taking n and d as parameters and returning this count.
+
+  function nbDig(n, d) {
+    // your code
+  let arr = []
+  for(let i = 0; i <= n; i++){
+    arr.push((i**2).toString())
+  }
+  let count = 0
+  arr.forEach(num => {
+    count += num.split('').filter(num => num === String(d)).length
+    })
+  return count
+}
+
+
+// An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+// Note: anagrams are case insensitive
+// Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+let isAnagram = function(test, original) {
+  if(test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')){
+    return true
+  } else return false
+};
+
+// Count the number of divisors of a positive integer n.
+// Random tests go up to n = 500000.
+
+function getDivisorsCnt(n){
+  // todo
+let count = 0
+for(let i = 1; i <= n; i++){
+  if(n % i === 0){
+    count++
+  }
+}
+return count
+}
+
+// Triangular numbers are so called because of the equilateral triangular shape that they occupy when laid out as dots. i.e.
+
+function triangular( n ) {
+  let count = 0
+  for(let i = 1; i <= n; i++){
+    count += i
+  }
+  return count
+}
+
+// Define a function that removes duplicates from an array of numbers and returns it as a result.
+
+// The order of the sequence has to stay the same.
+function distinct(a) {
+  return [...new Set(a)];
+}
+
+// Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+function sumDigits(number) {
+  return Math.abs(number).toString().split('').reduce((a,b) => a + Number(b),0)
+}
