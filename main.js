@@ -246,3 +246,111 @@ function maxMultiple(divisor, bound){
   }
   return N
 }
+
+
+// Complete the function/method so that it returns the url with anything after the anchor (#) removed. 
+function removeUrlAnchor(url){
+  // TODO: complete
+  let x = url.indexOf('#')
+  if(url.includes('#')){
+    return url.slice(0,x)
+  }
+  return url
+}
+
+// Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+let capitals = function (word) {
+	// Write your code here
+  return word.split('').map((letter, i) => {
+    if(letter === letter.toUpperCase()){
+      return i
+    }
+  }).filter(num => Number.isInteger(num))
+};
+
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+function sortByLength (array) {
+  // Return an array containing the same strings, ordered from shortest to longest
+  return array.sort((a,b) => a.length > b.length)
+};
+
+// Create a class Ghost
+// Ghost objects are instantiated without any arguments.
+// Ghost objects are given a random color attribute of white" or "yellow" or "purple" or "red" when instantiated
+let Ghost = function() {
+  this.color = ['white','yellow','purple','red'][Math.floor(Math.random()*4)]
+};
+
+
+
+
+// According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.
+// You have to do God's job. The creation method must return an array of length 2 containing objects (representing Adam and Eve). The first object in the array should be an instance of the class Man. The second should be an instance of the class Woman. Both objects have to be subclasses of Human. Your job is to implement the Human, Man and Woman classes.
+
+class God{
+  /**
+   * @returns Human[]
+   */
+    static create(){
+      return [new Man('Adam'), new Woman('Eve')]
+    }
+  }
+  class Human{
+    constructor(name){
+      this.name = name
+    }
+  }
+  class Man extends Human{
+    constructor(name){
+      super(name)
+    }
+  }
+  class Woman extends Human{
+      constructor(name){
+      super(name)
+    }
+  }
+  
+// Ahoy matey!
+// You are a leader of a small pirate crew. And you have a plan. With the help of OOP you wish to make a pretty efficient system to identify ships with a heavy booty on board.
+// Unfortunattely for you, people weigh a lot this days, so how do you know if a ship if full of gold and not people?
+// Every time your spies see a new ship enter the dock, they will create a new ship object based on their observations:
+
+// draft - an estimate of the ship's weight based on how low it is in the water
+// crew - the count of crew on board
+// Taking into account that an average crew member on board adds 1.5 units to the draft, a ship that has a draft of more than 20 without crew is considered worthy to loot. Any ship weighing that much must have a lot of booty!
+
+// Add the method
+
+// isWorthIt
+
+// to decide if the ship is worthy to loot. For example:
+
+// titanic.isWorthIt() // return false
+
+// This Kata teaches you the very basic of method creation.
+
+// Good luck!
+
+function Ship(draft,crew) {
+  this.draft = draft;
+  this.crew = crew;
+  this.isWorthIt = function(){
+      if(this.draft - (this.crew * 1.5) > 20){
+        return true
+      } else return false
+    }
+  }
+
+// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34
+
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+  get info(){
+    return `${this.name}s age is ${this.age}`
+  }
+}
