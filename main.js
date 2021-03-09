@@ -1,3 +1,6 @@
+// CODEWARS SOLUTIONS
+
+
 // A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward. This includes capital letters, punctuation, and word dividers.
 // Implement a function that checks if something is a palindrome.
 function isPalindrome(line) {
@@ -199,4 +202,47 @@ function distinct(a) {
 
 function sumDigits(number) {
   return Math.abs(number).toString().split('').reduce((a,b) => a + Number(b),0)
+}
+
+// Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+let number = function(array){
+  //your awesome code here
+ let arr = []
+ let x = 1
+ for(let i = 0; i < array.length; i++){
+   arr.push(`${x}: ${array[i]}`)
+   x++
+ }
+  return arr
+}
+// or
+let number = function(array) {
+  return array.map(function (line, index) {
+    return (index + 1) + ": " + line;
+  });
+}
+
+// Given a Divisor and a Bound , Find the largest integer N , Such That ,
+
+// Conditions :
+
+// N is divisible by divisor
+
+// N is less than or equal to bound
+
+// N is greater than 0.
+
+
+function maxMultiple(divisor, bound){
+  //your code here
+  let N = 0
+  for(let i = 1; i <= bound; i++){
+    if(i % divisor === 0){
+      N = i
+    }
+  }
+  return N
 }
