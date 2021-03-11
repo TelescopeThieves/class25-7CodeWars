@@ -492,3 +492,66 @@ function sum(...args){
   //...
   return args.filter(num => Number.isInteger(num)).reduce((a,b) => a + b,0)
   }
+
+
+// I. Cuboid
+
+// The object constructor for the class Cuboid should receive exactly three arguments in the following order: length, width, height and store these three values in this.length, this.width and this.height respectively.
+// The class Cuboid should then have a getter surfaceArea which returns the surface area of the cuboid and a getter volume which returns the volume of the cuboid.
+
+// II. Cube
+
+// class Cube is a subclass of class Cuboid. The constructor function of Cube should receive one argument only, its length, and use that value passed in to set this.length, this.width and this.height.  
+
+class Cuboid {
+  // TODO: Program Me
+  constructor(length, width, height){
+    this.length = length
+    this.width = width
+    this.height = height
+  }
+  get surfaceArea(){
+
+    return 2 * (this.length*this.width + this.length*this.height + this.width*this.height)
+  }
+  get volume(){
+    return this.length*this.width*this.height
+  }
+}
+class Cube extends Cuboid {
+  // Don't forget to make a call to super ;)
+  constructor(length){
+    super(length, length, length)
+  }
+
+}
+
+// Create a function that returns the name of the winner in a fight between two fighters.
+// Each fighter takes turns attacking the other and whoever kills the other first is victorious. Death is defined as having health <= 0.
+// Each fighter will be a Fighter object/instance. See the Fighter class below in your chosen language.
+// Both health and damagePerAttack (damage_per_attack for python) will be integers larger than 0. You can mutate the Fighter objects.
+
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function() { return this.name; }
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  
+  if(fighter1.name === firstAttacker){
+    while(fighter1.health > 0 && fighter2.health > 0){
+      fighter2.health -= fighter1.damagePerAttack
+      fighter1.health -= fighter2.damagePerAttack
+    }
+    return fighter2.health > 0 ? fighter2.name : fighter1.name;
+    
+  } else if (fighter2.name === firstAttacker){
+    while(fighter1.health > 0 && fighter2.health > 0){
+      fighter1.health -= fighter2.damagePerAttack
+      fighter2.health -= fighter1.damagePerAttack
+    }
+    return fighter1.health > 0 ? fighter1.name : fighter2.name;
+  }
+}
