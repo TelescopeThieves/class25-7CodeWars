@@ -555,3 +555,73 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
     return fighter1.health > 0 ? fighter1.name : fighter2.name;
   }
 }
+
+// Define a method/function that removes from a given array of integers all the values contained in a second array.
+
+Array.prototype.remove_ = function(integer_list, values_list){
+  //your code here
+  return integer_list.filter((num) => !values_list.includes(num))
+}
+
+// In this kata, your job is to create a class Dictionary which you can add words to and their entries.
+
+class Dictionary {
+  constructor() {
+    // 
+    this.dict = {}
+   
+  }
+  
+  newEntry(key, value) {
+    // your code
+    return this.dict[key] = value
+  }
+  
+  look(key) {
+    // your code
+      return this.dict[key] || `Can't find entry for ${key}`
+    
+  }
+}
+
+
+// You're going to implement a simple counter class. The counter will start at zero, and every time its incr method is called, it will increase by 1.
+
+// There's one caveat: Your counter must act like a number and support arithmetic operations and comparisons.
+
+// examples:
+// var c = new Counter();
+// c.incr(); // counter is now at 1
+// c + 1; // 2
+// c > 1; // false
+// c > 0; // true
+// c == 1; // true
+// Math.sqrt(c); // 1
+
+function Counter(){
+  this.value = 0
+}
+
+Counter.prototype.incr = function() {
+  this.value += 1
+  
+}
+
+Counter.prototype.valueOf = function() {
+  return this.value
+}
+
+
+// The Array's reverse() method has gone missing! Re-write it, quick-sharp!
+// When this method is called, it reverses the order of the items in the original array. Then then it returns that same, original array. No new arrays should need to be created to pass this kata.
+
+Array.prototype.reverse = function() {
+  // ...
+
+  for(let i = this.length - 1; i >= 0; i--){
+    this.push(this[i])
+    this.splice(i,1)
+  }
+
+  return this
+};
