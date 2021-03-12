@@ -625,3 +625,40 @@ Array.prototype.reverse = function() {
 
   return this
 };
+
+
+// You will be given an array that contains two strings. Your job is to create a function that will take those two strings and transpose them, so that the strings go from top to bottom instead of left to right.
+// e.g. transposeTwoStrings(['Hello','World']);
+
+// should return
+
+// H W  
+// e o  
+// l r  
+// l l  
+// o d
+
+
+function transposeTwoStrings(arr){
+  //your code here
+    let result = []
+    let long = Math.max(arr[0].length, arr[1].length)
+    for(let i = 0; i < long; i++){
+    result.push(`${arr[0][i] || ' '} ${arr[1][i] || ' '}`);
+  }
+    return result.join('\n');
+    }
+
+// You have to create a function named reverseIt.
+
+// Write your function so that in the case a string or a number is passed in as the data , you will return the data in reverse order. If the data is any other type, return it as it is.
+
+function reverseIt(data){
+
+  if(typeof data === 'string'){
+    return data.split('').reverse().join('')
+  } else if(typeof data === 'number'){
+    return parseFloat(String(data).split("").reverse().join(""));
+    }
+  else return data
+}
