@@ -662,3 +662,35 @@ function reverseIt(data){
     }
   else return data
 }
+
+// The purpose of this kata is to work out just how many bottles of duty free whiskey you would have to buy such that the saving over the normal high street price would effectively cover the cost of your holiday.
+// You will be given the high street price (normPrice), the duty free discount (discount) and the cost of the holiday.
+// For example, if a bottle cost £10 normally and the discount in duty free was 10%, you would save £1 per bottle. If your holiday cost £500, the answer you should return would be 500.
+// All inputs will be integers. Please return an integer. Round down
+
+function dutyFree(normPrice, discount, hol){
+  let dollarsOff = normPrice * (discount * .01)
+  return Math.floor(hol/dollarsOff)
+}
+
+// Kids drink toddy.
+// Teens drink coke.
+// Young adults drink beer.
+// Adults drink whisky.
+
+// Make a function that receive age, and return what they drink.
+
+// Rules:
+
+// Children under 14 old.
+// Teens under 18 old.
+// Young under 21 old.
+// Adults have 21 or more.
+
+
+function peopleWithAgeDrink(old) {
+  return  old < 14 ? 'drink toddy'
+        : old < 18 ? 'drink coke'
+        : old < 21 ? 'drink beer'
+        : 'drink whisky'
+}
