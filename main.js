@@ -760,6 +760,18 @@ function duplicateCount(text){
     })
   return count
 }
+// or 
+function duplicateCount(text){
+  const myObj = {}
+
+  text.toLowerCase().split('').forEach((e) => {
+    
+    myObj[`${e}`] ? myObj[`${e}`]++ : myObj[`${e}`] = 1
+  })
+  
+  return Object.values(myObj).filter(e => e !== 1).length
+}
+
 
 // We want to generate a function that computes the series starting from 0 and ending until the given number.
 // Example:
@@ -811,3 +823,14 @@ var SequenceSum = (function() {
   return SequenceSum;
 
 })();
+
+// Given a string str, reverse it omitting all non-alphabetic characters.
+
+function reverseLetter(str) {
+  //coding and coding..
+
+return str.toLowerCase().split('')
+      .filter(char => ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'].includes(char))
+      .reverse().join('')
+  
+}
