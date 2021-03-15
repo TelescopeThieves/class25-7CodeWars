@@ -707,3 +707,56 @@ function inAscOrder(arr) {
   let check = arr.map((num,i,a) => a[i] < a[i+1]).slice(0,-1)
   return check.every(el => el === true)
 }
+
+
+// There is an object/class already created called MrFreeze. Mark this object as frozen so that no other changes can be made to it. 
+
+// mark the MrFreeze object instance as frozen
+Object.freeze(MrFreeze)
+
+
+// Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+
+// For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+
+function capitalize(s){
+  let s1 = s.split('').map((letter,i,a) => {
+    if(i % 2 === 0){
+      return letter.toUpperCase()
+    } else{
+      return letter
+    }
+  }).join('')
+  
+  let s2 = s.split('').map((letter,i,a) => {
+    if(i % 2 !== 0){
+      return letter.toUpperCase()
+    } else{
+      return letter
+    }
+  }).join('')
+  
+  return [s1,s2]
+};
+
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+// Example
+
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text){
+  //...
+  let count = 0
+  text.toLowerCase().split('').map((letter,i,a) => {
+      if(a.indexOf(letter) !== i && a.lastIndexOf(letter) === i){
+        count++
+      }
+    })
+  return count
+}
