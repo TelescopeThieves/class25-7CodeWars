@@ -860,3 +860,72 @@ let palindromeChainLength = function(n) {
   }
   return step
 };
+
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+
+// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+// For example:
+
+// gimme([2, 3, 1]) => 0
+
+var gimme = function (inputArray) {
+  // Implement this function
+  let x = []
+  inputArray.forEach(num => x.push(num))
+  x.sort((a,b) => a - b)
+  return inputArray.indexOf(x[1])
+};
+
+
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates). 
+
+function minValue(values){
+  //your code here
+  let x = new Set(values)
+  let y = Array.from(x)
+  return Number(y.sort((a,b) => a - b).map(num => num.toString()).join(''))
+  
+}
+
+// Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+
+// Example:
+
+// Input:
+
+// 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+// Output:
+
+// 'alpha beta gamma delta'
+
+
+function removeDuplicateWords (s) {
+  // your perfect code...
+  return Array.from(new Set(s.split(' '))).join(' ')
+}
+
+// Given an integer as input, can you round it to the next (meaning, "higher") multiple of 5?
+// examples:
+// input:    output:
+// 0    ->   0
+// 2    ->   5
+// 3    ->   5
+// 12   ->   15
+// 21   ->   25
+// 30   ->   30
+// -2   ->   0
+// -5   ->   -5
+
+function roundToNext5(n){
+  // ...
+  if(Math.abs(n % 5) === 0){
+    return n
+  }
+  let result = 0
+  for(let i = n; Math.abs(i % 5) !== 0; i++){
+    result = i + 1
+  }
+  return result
+}
