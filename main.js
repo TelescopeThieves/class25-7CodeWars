@@ -929,3 +929,67 @@ function roundToNext5(n){
   }
   return result
 }
+
+// You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.
+
+// Find max(abs(length(x) − length(y)))
+
+// If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).
+
+function mxdiflg(a1, a2) {
+  // your code
+if(a1.length === 0 || a2.length === 0){
+  return -1
+}
+let a1Lengths = a1.map(word => word.length)
+let a2Lengths = a2.map(word => word.length)
+let x = Math.abs(Math.min(...a1Lengths) - Math.max(...a2Lengths))
+let y = Math.abs(Math.min(...a2Lengths) - Math.max(...a1Lengths))
+
+return x > y ? x : y;
+}
+
+
+// In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+// make as few changes as possible.
+// if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+
+function solve(s){
+  //..
+let lowCase = 0
+let upCase = 0
+s.split('').forEach(letter => letter === letter.toLowerCase()? lowCase++ : upCase++)
+return lowCase >= upCase ? s.toLowerCase() : s.toUpperCase()
+}
+
+
+// It's tricky keeping track of who is owed what when spending money in a group. Write a function to balance the books.
+
+//The function should take one parameter: an object/dict with two or more name-value pairs which represent the members of the group and the amount spent by each.
+//     The function should return an object/dict with the same names, showing how much money the members should pay or receive.
+
+// Further points:
+
+// The values should be positive numbers if the person should receive money from the group, negative numbers if they owe money to the group.
+
+//If value is a decimal, round to two decimal places.
+
+//Translations and comments (and upvotes!) welcome.
+
+
+function splitTheBill(x) {
+  //code away...
+let total = 0
+let count = 0
+
+for(let key in x){
+total += x[key]
+count++
+}
+
+let billCut = (total / count)
+
+Object.keys(x).forEach(key => x[key] = +(x[key] - billCut).toFixed(2))
+return x
+
+}
