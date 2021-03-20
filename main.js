@@ -993,3 +993,29 @@ Object.keys(x).forEach(key => x[key] = +(x[key] - billCut).toFixed(2))
 return x
 
 }
+
+
+// Create a function add(n)/Add(n) which returns a function that always adds n to any number
+
+
+function add(n) {
+  return function(y){
+    return n + y
+  }
+}
+
+// add(3)(2)
+// -> 5
+
+
+// Take a list of ages when each of your great-grandparent died.
+// Multiply each number by itself.
+// Add them all together.
+// Take the square root of the result.
+// Divide by two.
+function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
+  // your code
+  let arr = [age1,age2,age3,age4,age5,age6,age7,age8]
+  return Math.floor(Math.sqrt(arr.map(age => age*age)
+             .reduce((a,b) => +a + b)) / 2)
+}
