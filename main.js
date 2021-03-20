@@ -1019,3 +1019,34 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
   return Math.floor(Math.sqrt(arr.map(age => age*age)
              .reduce((a,b) => +a + b)) / 2)
 }
+
+
+
+function f(n){
+  //insert your code here.... and go crazy!
+  
+    let result = 0
+    
+    if(Number.isInteger(n) && n > 0){
+      for(let i = 1; i <= n; i++){
+        result += i
+      }
+    } else return false
+    
+      return result
+  };
+
+//   The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+// Examples
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))((" 
+
+  function duplicateEncode(word){
+  
+    return word.toLowerCase().split('').map((letter,i,a) => {
+      return a.indexOf(letter) === a.lastIndexOf(letter) ? letter = '(' : letter = ')' ;
+      }).join('')
+  }
