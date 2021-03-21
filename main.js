@@ -1050,3 +1050,40 @@ function f(n){
       return a.indexOf(letter) === a.lastIndexOf(letter) ? letter = '(' : letter = ')' ;
       }).join('')
   }
+
+  var greet = function(name) {
+    name = name[0].toUpperCase() + name.slice(1).toLowerCase()
+    return `Hello ${name}!`
+  };
+
+
+//Complete the solution so that it takes the object (JavaScript/CoffeeScript) or hash (ruby) passed in and generates a human readable string from its key/value pairs.
+
+// The format should be "KEY = VALUE". Each key/value pair should be separated by a comma except for the last pair.
+
+// Example:
+
+// solution({a: 1, b: '2'}) // should return "a = 1,b = 2"
+
+  function solution(pairs){
+    // TODO: complete
+    let keys = Object.keys(pairs)
+    let values = Object.values(pairs)
+    return keys.map((key,i,a) => `${key} = ${values[i]}`).join(',')
+  }
+
+  // Find the greatest common divisor of two positive integers. The integers can be large, so you need to find a clever solution.
+
+  // The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1.
+  
+  function mygcd(x,y){
+    //your code here
+    let divisor = 0
+    let smaller = Math.min(x,y)
+    for(let i = 1; i <= smaller; i++){
+      if(x % i === 0 && y % i === 0){
+        divisor = i
+      }
+    }
+    return divisor
+  }
