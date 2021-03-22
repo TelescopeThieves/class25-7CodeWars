@@ -1087,3 +1087,17 @@ function f(n){
     }
     return divisor
   }
+
+
+  // check if array is in ascending, descending or not in order 
+
+
+  function isSortedAndHow(array) {
+    let ascend = array.slice(0).sort((a,b) => a - b)
+    let descend = array.slice(0).sort((a,b) => a - b).reverse()
+      if(array.join('') === ascend.join('')){
+      return 'yes, ascending'
+      }else if (array.join('') === descend.join('')){
+      return 'yes, descending'
+      }else return 'no'
+    }
