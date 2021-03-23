@@ -1138,3 +1138,14 @@ function f(n){
     //Your code goes here.
     return string.repeat(n)
   }
+
+  // Find the number with the most digits.
+
+  // If two numbers in the argument array have the same number of digits, return the first one in the array.
+  
+  function findLongest(array){
+    // code here
+    let sorted = array.slice(0).sort((a,b) => a.toString().length - b.toString().length)
+    let long = sorted[sorted.length - 1].toString().length
+    return array.find(num => num.toString().length === long)
+  }
