@@ -1149,3 +1149,37 @@ function f(n){
     let long = sorted[sorted.length - 1].toString().length
     return array.find(num => num.toString().length === long)
   }
+
+  
+  // Complete the function that takes an integer n and returns a list/array of length abs(n) + 1 of the arithmetic series explained above. Whenn < 0 return the sequence with negative terms.
+  // Examples
+  
+  //  5  -->  [0,  1,  3,  6,  10,  15]
+  // -5  -->  [0, -1, -3, -6, -10, -15]
+  //  7  -->  [0,  1,  3,  6,  10,  15,  21,  28]
+  
+  
+  function sumOfN(n) {
+    // insert here your code
+      let arr = []
+      for(let i = 0; i <= Math.abs(n); i++){
+        arr.push(i)
+      }
+      if( n > 0){
+          return arr.map(num => {
+                    let x = num
+                    for(let i = 0; i < num; i++){
+                    x += i
+                    }
+                    return num = x
+                  })
+          } else if(n < 0){
+              return arr.map(num => {
+                    let x = 0 
+                    for(let i = 0; i <= Math.abs(num); i++){
+                    x -= i
+                    }
+                    return num = x
+                  })
+          } else return [n]
+    };
