@@ -1184,3 +1184,12 @@ function f(n){
                   })
           } else return [n]
     };
+
+
+    // Complete the keysAndValues function so that it takes in an object and returns the keys and values as separate arrays.
+
+
+    function keysAndValues(data){
+      // TODO: complete
+      return [Object.keys(data), Object.values(data)]
+    }
