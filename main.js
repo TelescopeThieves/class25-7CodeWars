@@ -1226,3 +1226,26 @@ function rowWeights(array){
 //   return [team1,team2]
   return [team1R,team2R]
 }
+
+
+// Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+
+//     Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+//     Each part will be in a string
+//     Elements of a pair must be in the same order as in the original array.
+
+function partlist(arr) {
+  // your code
+let x = []
+let finalArr = []
+for(let i = 1; i < arr.length; i++){
+  x.push(arr.slice(0,i),arr.slice(i))
+}
+x = x.map((a) => a.join(' '))
+for(let i = 0; i < x.length; i++){
+  if(i % 2 === 0){
+    finalArr.push([x[i],x[i+1]])
+  }
+}
+return finalArr
+}
