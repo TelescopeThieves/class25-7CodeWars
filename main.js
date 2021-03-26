@@ -1193,3 +1193,36 @@ function f(n){
       // TODO: complete
       return [Object.keys(data), Object.values(data)]
     }
+
+// Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+// Example:
+// Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+    function flattenAndSort(array) {
+      // Good luck, brave code warrior!
+      let sorted = []
+      array.forEach(a => a.forEach(num => sorted.push(num)))
+      return sorted.sort((a,b) => a - b)
+    }
+
+// Several people are standing in a row divided into two teams.
+// The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
+
+// Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+
+function rowWeights(array){
+  //your code here
+  let team1 = []
+  let team2 = []
+  array.forEach((num, i) => {
+    if(i % 2 === 0){
+      team1.push(num)
+    } else{
+      team2.push(num)
+    }
+  })
+  let team1R = team1.reduce((a,c) => a + c, 0)
+  let team2R = team2.reduce((a,c) => a + c, 0)
+//   return [team1,team2]
+  return [team1R,team2R]
+}
