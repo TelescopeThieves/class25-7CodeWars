@@ -1249,3 +1249,53 @@ for(let i = 0; i < x.length; i++){
 }
 return finalArr
 }
+
+
+// If　a = 1, b = 2, c = 3 ... z = 26
+
+// Then l + o + v + e = 54
+
+// and f + r + i + e + n + d + s + h + i + p = 108
+
+// So friendship is twice stronger than love :-)
+
+// The input will always be in lowercase and never be empty.
+
+
+
+function wordsToMarks(string){
+  //your code here
+  let aplha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  let count = 0
+  let str = string.split('')
+  str.map(letter => {
+    count += aplha.indexOf(letter) + 1
+  })
+  
+  return count
+}
+
+// alternative 
+function wordsToMarks(str)
+{
+  var sum = 0;
+  for (let i = 0; i < str.length; i++)
+    sum += str.charCodeAt(i) - 96;
+  return sum;
+}
+
+// Given a 2D array of size m * n. Your task is to find the sum of minimum value in each row.
+
+// For Example:
+
+// [
+//   [1, 2, 3, 4, 5],       // minimum value of row is 1
+//   [5, 6, 7, 8, 9],       // minimum value of row is 5
+//   [20, 21, 34, 56, 100]  // minimum value of row is 20
+// ]
+
+function sumOfMinimums(arr) {
+  // your code here
+  return arr.map(a => a.sort((x,y)=> x - y)).map(arr => arr[0]).reduce((acc,c) => acc + c,0)
+  
+}
