@@ -1399,3 +1399,29 @@ function pattern(n){
   }
  return output.slice(0,-1)
 }
+
+// This kata is the first of a sequence of four about "Squared Strings".
+
+// You are given a string of n lines, each substring being n characters long: For example:
+
+// s = "abcd\nefgh\nijkl\nmnop"
+
+// We will study some transformations of this square of strings.
+
+// Vertical mirror: vert_mirror (or vertMirror or vert-mirror)
+// vert_mirror(s) => "dcba\nhgfe\nlkji\nponm"
+// Horizontal mirror: hor_mirror (or horMirror or hor-mirror)
+// hor_mirror(s) => "mnop\nijkl\nefgh\nabcd"
+
+function vertMirror(strng) {
+  // Your code
+return strng.split('\n').map(word => word.split('').reverse().join('')).join('\n')
+}
+function horMirror(strng) {
+  // Your code
+return strng.split('\n').reverse().join('\n')
+}
+function oper(fct, s) {
+  // Your code
+return fct(s)
+}
