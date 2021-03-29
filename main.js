@@ -1356,7 +1356,7 @@ function caffeineBuzz(n){
   // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
   // persistence(39) === 3 // because 3*9 = 27, 2*7 = 14, 1*4=4  // and 4 has only one digit
-  
+
   function persistence(num) {
     //code me
    let perCount = 0
@@ -1366,3 +1366,36 @@ function caffeineBuzz(n){
    }
    return perCount
  }
+
+//  Complete the function circleArea so that it will return the area of a circle with the given radius. Round the returned number to two decimal places (except for Haskell). If the radius is not positive or not a number, return false.
+ var circleArea = function(radius) {
+  if(radius <= 0 || isNaN(radius)){
+    return false
+  }
+  return Number((Math.PI * radius**2).toFixed(2))
+};
+
+
+
+// Pattern:
+
+// 1
+// 22
+// 333
+// ....
+// .....
+// nnnnnn
+
+function pattern(n){
+  let output = ''
+  if(n < 1){
+    return output
+  } else{
+    for(let i = 1; i <= n; i++){
+      let str = i.toString()
+      output += str.repeat(i)
+      output +=`\n`
+    }
+  }
+ return output.slice(0,-1)
+}
