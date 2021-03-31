@@ -1425,3 +1425,26 @@ function oper(fct, s) {
   // Your code
 return fct(s)
 }
+
+
+function addLetters(...letters) {
+  // your code here
+  if(letters.length === 0 || typeof letters === 'undefined'){
+    return 'z'
+  }
+  let count = 0
+  letters.forEach((letter,i,a) => {
+    count += a[i].charCodeAt(0) - 96
+  })
+  while(count > 26){
+    count -= 26
+  }
+  return String.fromCharCode(96 + count)
+}
+
+
+// Given a number , Return _The Maximum number _ could be formed from the digits of the number given . 
+function maxNumber(n){
+  //your code here
+  return Number(n.toString().split('').sort((x,y) => y - x).join(''))
+}
