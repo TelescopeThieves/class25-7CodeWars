@@ -1492,3 +1492,61 @@ function sumTriangularNumbers(n) {
   }
   return triangle.reduce((a,b) => a + b, 0)
 }
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+function alphabetPosition(text) {
+  return text.split('').map(letter => {
+
+      return letter.toLowerCase().charCodeAt(0) - 96
+    
+  }).filter(num => num > 0 && num <= 26).join(' ')
+}
+
+
+// Write a function that accepts fight string consists of only small letters and return who wins the fight. When the left side wins return Left side wins!, when the right side wins return Right side wins!, in other case return Let's fight again!.
+
+// The left side letters and their power:
+
+//  w - 4
+//  p - 3
+//  b - 2
+//  s - 1
+// The right side letters and their power:
+
+//  m - 4
+//  q - 3
+//  d - 2
+//  z - 1
+
+
+function alphabetWar(fight){
+  let arr = fight.toLowerCase().split('')
+  let leftSide = {'w': 4,'p': 3,'b': 2,'s': 1}
+  let rightSide = {'m': 4,'q': 3,'d': 2,'z': 1}
+  let leftCount = 0
+  let rightCount = 0
+  
+  arr.forEach(letter => {
+    for(key in leftSide){
+      if(letter === key){
+        leftCount += leftSide[key]
+      }
+    }
+    for(key in rightSide){
+      if(letter === key){
+        rightCount += rightSide[key]
+      }
+    }
+    
+  })
+  
+  if (leftCount > rightCount) {
+    return `Left side wins!`
+  } else if (rightCount > leftCount){
+    return `Right side wins!`
+  }
+   return "Let's fight again!";
+}
