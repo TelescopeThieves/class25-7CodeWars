@@ -1575,3 +1575,18 @@ arr.reverse()
 console.log(arr)
 return Math.abs(arr[nth - 1])
 }
+
+// So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence:
+
+// [1, 1 ,1, 3, 5, 9, 17, 31, ...]
+
+function tribonacci(signature,n){
+  //your code here
+  let tribonacci = []
+  tribonacci.push(...signature)
+  for(let i = 0; i < n; i++){
+    let x = tribonacci[i] + tribonacci[i + 1] + tribonacci[i + 2]
+    tribonacci.push(x)
+  }
+  return tribonacci.slice(0,-3)
+}
