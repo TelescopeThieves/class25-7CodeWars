@@ -1623,3 +1623,44 @@ function order(words){
   }
   return inOrder.join(' ')
 }
+
+
+// Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
+
+// ! Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+
+function iqTest(numbers){
+  // ...
+  let even = 0
+  let odd = 0
+  let arr = numbers.split(' ').map(Number)
+  arr.forEach(num => {
+    if(num % 2 === 0){
+       even += 1
+    }else odd += 1
+  })
+  if(even > odd){
+
+    return arr.indexOf(arr.find(num => num % 2 !== 0)) + 1
+  } else{
+    return arr.indexOf(arr.find(num => num % 2 === 0)) + 1
+  }
+
+}
+
+// digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+
+function digPow(n, p){
+  // ...
+  let result = 0
+  let arr = n.toString().split('').map(Number)
+  for(let i = 0; i < arr.length; i++){
+    result += arr[i]**p
+    p += 1
+  }
+  if(result % n === 0){
+    return result / n
+  } else{
+    return -1
+  }
+}
