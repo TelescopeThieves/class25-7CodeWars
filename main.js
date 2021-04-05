@@ -1689,3 +1689,24 @@ function toCamelCase(str){
   }).join('')
   
 }
+
+function findEvenIndex(arr){
+  //Code goes here!
+  let result = -1
+  
+  arr.forEach((num,i,a) => {
+    let leftS = 0
+    let rightS = 0
+    for(let j = i+1; j < a.length; j++){
+      rightS += a[j]
+    }
+    for(let k = i-1; k >= 0; k--){
+      leftS += a[k]
+    }
+    if(leftS === rightS){
+      result = i
+    }
+  })
+  
+  return result
+}
