@@ -1664,3 +1664,28 @@ function digPow(n, p){
     return -1
   }
 }
+
+
+// "the-stealth-warrior" gets converted to "theStealthWarrior"
+// "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+function toCamelCase(str){
+  
+  if(str.length === 0){
+    return ''
+  }
+  
+  if(str.includes('-')){
+    str = str.split('-')
+  }else if(str.includes('_')){
+    str = str.split('_')
+  }
+
+  return str.map((w,i,a) => {
+    if(i > 0){
+      return w[0].toUpperCase() + w.slice(1)
+    } else{
+      return w
+    }
+  }).join('')
+  
+}
