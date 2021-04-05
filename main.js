@@ -1707,6 +1707,21 @@ function findEvenIndex(arr){
       result = i
     }
   })
-  
+
   return result
+}
+
+
+function list(names){
+  //your code here
+  
+  if(names.length === 0){
+    return ''
+  }else if(names.length === 1){
+    return names[0].name
+  }
+  
+  let nameList = []
+  names.forEach(obj => nameList.push(obj.name))
+  return nameList.slice(0,-1).join(', ') + ' & ' + nameList.slice(-1)
 }
