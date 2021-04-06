@@ -1725,3 +1725,15 @@ function list(names){
   names.forEach(obj => nameList.push(obj.name))
   return nameList.slice(0,-1).join(', ') + ' & ' + nameList.slice(-1)
 }
+
+// For example, take 153 (3 digits), which is narcisstic:
+
+//     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+function narcissistic(value) {
+  // Code me to return true or false
+  let check = value.toString().split('')
+              .map((num,i,a) => num**a.length)
+              .reduce((a,b) => a + b, 0)
+  return value === check
+}
