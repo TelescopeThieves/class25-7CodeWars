@@ -1737,3 +1737,27 @@ function narcissistic(value) {
               .reduce((a,b) => a + b, 0)
   return value === check
 }
+
+
+function isPangram(string){
+  //...
+  let alpha = `abcdefghijklmnopqrstuvwxyz`
+  let hash = {}
+  
+  string.toLowerCase().split('')
+    .filter(letter => letter.charCodeAt(0) - 96 >= 1 && letter.charCodeAt(0) - 96 <= 26)
+    .map(letter => {
+      if(hash[letter]){
+      hash[letter] += 1
+    }else hash[letter] = 1
+  })
+  
+ let check = alpha.split('').map(letter => {
+   for(key in hash){
+     if(key === letter){
+       return true
+     }
+   }
+ })
+  return check.every(el => el === true)
+}
