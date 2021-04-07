@@ -1780,3 +1780,43 @@ function findUniq(arr) {
     }
   }
 }
+// alt 
+function findUniq(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+}
+
+// Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities. "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
+
+function comp(a1, a2){
+  //your code here
+  if(a1 === null || a2 === null){
+    return false
+  }
+  a1.sort((a,b) => a - b)
+  a2.sort((a,b) => a - b)
+  a1 = a1.map(num => num**2)
+  return a1.every((x,i) => x === a2[i])
+}
+
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+function solution(str){
+  let pairs = []
+  
+  if(str.length % 2 !== 0){
+       str.split('').map((a,i,arr) => {
+      if(i % 2 === 0 && i + 1 < str.length - 1){
+        pairs.push(`${a}${arr[i+1]}`)
+      }else if(i === str.length - 1){
+        pairs.push(`${a}_`)
+      }
+    })
+  } else if(str.length % 2 === 0){
+           str.split('').map((a,i,arr) => {
+      if(i % 2 === 0){
+        pairs.push(`${a}${arr[i+1]}`)
+      }
+    })
+  } 
+  return pairs
+}
