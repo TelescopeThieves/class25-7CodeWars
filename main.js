@@ -1820,3 +1820,19 @@ function solution(str){
   } 
   return pairs
 }
+
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+  //Code here
+  return str.split(' ').map(word => {
+    let alpha = 'abcdefghijklmnopqrstuvwxzyABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    if(word.split('').every(x => alpha.includes(x))){
+      return word.slice(1)+word[0]+`ay`
+    } else{
+      return word                        
+    }
+  }).join(' ')
+  
+}
+
