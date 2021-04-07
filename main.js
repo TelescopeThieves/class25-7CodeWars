@@ -1761,3 +1761,22 @@ function isPangram(string){
  })
   return check.every(el => el === true)
 }
+
+// There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+function findUniq(arr) {
+  // do magic
+  let hash = {}
+  arr.forEach(num => {
+    if(hash[num]){
+      hash[num]+=1
+    } else{
+      hash[num] = 1
+    }
+  })
+  for(key in hash){
+    if(hash[key] === 1){
+      return Number(key)
+    }
+  }
+}
