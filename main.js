@@ -1836,3 +1836,30 @@ function pigIt(str){
   
 }
 
+var moveZeros = function (arr) {
+  // TODO: Program me
+  let zeros = arr.filter(el => el === 0)
+  
+  return arr.map(el => {
+    if(el !== 0){
+      return el
+    } else return ''
+  }).concat(zeros).filter(a => a !== '')
+}
+
+var moveZeros = function (arr) {
+  // TODO: Program me
+return arr.filter(x => x !== 0).concat(arr.filter(x => x === 0))
+}
+
+
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+var uniqueInOrder=function(iterable){
+  //your code here - remember iterable can be a string or an array
+  if(typeof iterable === 'string'){
+    return iterable.split('').filter((x,i,a) => x != a[i+1])
+  } else{
+    return iterable.filter((x,i,a) => x != a[i+1])
+  }
+}
