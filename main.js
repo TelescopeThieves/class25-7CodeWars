@@ -1875,7 +1875,7 @@ function deleteNth(arr,n){
       hash[num] = 1
     }
   })
-  
+
   for(let key of Object.keys(hash)){
     while(hash[key] > n){
       hash[key] -= 1
@@ -1891,6 +1891,9 @@ function deleteNth(arr,n){
     }
   })
   return newArr
+}
 
-  
+function printArray(array){
+  //show me the code!
+  return array.join(',')
 }
