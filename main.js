@@ -1863,3 +1863,34 @@ var uniqueInOrder=function(iterable){
     return iterable.filter((x,i,a) => x != a[i+1])
   }
 }
+
+
+function deleteNth(arr,n){
+  let hash = {}
+  
+  arr.forEach(num => {
+    if(hash[num]){
+      hash[num] += 1
+    }else{
+      hash[num] = 1
+    }
+  })
+  
+  for(let key of Object.keys(hash)){
+    while(hash[key] > n){
+      hash[key] -= 1
+    }
+  }
+  
+  let newArr = []
+//   loops thru array, checks if the element
+  arr.forEach(nCount => {
+    if(hash[nCount] >  0){
+      newArr.push(nCount)
+      hash[nCount] -= 1
+    }
+  })
+  return newArr
+
+  
+}
