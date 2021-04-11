@@ -1928,3 +1928,8 @@ function countSmileys(arr) {
   count = arr.filter(face => valid.includes(face)).length
   return count
   }
+
+  function helloWorld(){
+    var str = 'Hello World!'
+    console.log(str)
+  }
