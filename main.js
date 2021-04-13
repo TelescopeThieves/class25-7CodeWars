@@ -1897,3 +1897,17 @@ function printArray(array){
   //show me the code!
   return array.join(',')
 }
+
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+function sortArray(array) {
+  // Return a sorted array.
+  let sortedArr = array.filter(num => num % 2 !== 0).sort((a,b) => a - b)
+  let count = 0
+  for(let i = 0; i < array.length; i++){
+    if(array[i] % 2 !== 0){
+      array[i] = sortedArr[count]
+      count++
+    }
+  }
+  return array
+}
