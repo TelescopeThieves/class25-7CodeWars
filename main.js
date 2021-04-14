@@ -1943,3 +1943,14 @@ function countSmileys(arr) {
   function unusualFive(){
     return 'mario'.length
   }
+
+decodeMorse = function(morseCode){
+  //your code here
+  let code = morseCode.split('   ')
+  let str = ''
+  code.forEach(word => {
+    str += word.split(' ').map(char => MORSE_CODE[char]).join('')
+    str += ' '
+  })
+  return str.trim()
+}
