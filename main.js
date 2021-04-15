@@ -1970,3 +1970,31 @@ function isPrime(num) {
   }
   return num > 1
 }
+
+
+function longestConsec(strarr, k) {
+  // your code
+if(strarr.length === 0 || k > strarr.length || k <= 0){
+  return ''
+}
+
+let consec = strarr.map((word,i,a)=>{
+  let arr = [word]
+  for(let j = 1; j < k; j++){
+  if(a[i+j]){
+    arr.push(a[i+j])
+  }
+}
+return arr.join('')
+})
+
+let longest = 0
+consec.forEach(word => {
+  if(word.length > longest){
+    longest = word.length
+  }
+})
+
+return consec.find(word => word.length === longest)
+
+}
