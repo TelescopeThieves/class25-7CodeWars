@@ -1998,3 +1998,38 @@ consec.forEach(word => {
 return consec.find(word => word.length === longest)
 
 }
+
+
+function high(x){
+  
+  let hash = {}
+  
+  x.split(' ').forEach(word => {
+    
+    word.split('').forEach(letter => {
+      if(hash[word]){
+        hash[word] += letter.charCodeAt(0) - 96
+      } else{
+        hash[word] = letter.charCodeAt(0) - 96
+      }
+    })
+  })
+
+  let highscore = 0
+
+  for(let key in hash){
+    if(hash[key] > highscore){
+      highscore = hash[key]
+    }
+  }
+
+  let highest = []
+
+  for(let key in hash){
+  if(hash[key] === highscore){
+    highest.push(key)
+  }
+  }
+  
+  return highest[0]
+}
