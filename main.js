@@ -2033,3 +2033,17 @@ function high(x){
   
   return highest[0]
 }
+
+
+function findOddNames(list) {
+  // thank you for checking out the Coding Meetup kata :)
+  let answer = []
+  list.forEach(dev => {
+    let name = dev.firstName.split('').reduce((a,c) => a + c.charCodeAt(0), 0)
+    if(name % 2 !== 0){
+      answer.push(dev)
+    }
+  })
+  
+  return answer
+}
