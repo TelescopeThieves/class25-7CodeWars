@@ -2047,3 +2047,32 @@ function findOddNames(list) {
   
   return answer
 }
+
+
+
+function towerBuilder(nFloors) {
+  // build here
+  let x = 1
+  for(let i = 0; i < nFloors - 1; i++){
+    x+=2
+  }
+  
+  let tower = []
+  let ast = '*'
+  
+  while(tower.length < nFloors){
+    tower.push(ast)
+    ast+= '*'
+    ast+= '*'
+  }
+
+ tower = tower.map(floor => floor.split(''))
+ 
+ for(let i = 0; i < tower.length; i++){
+  while(tower[i].length < x){
+    tower[i].unshift(' ')
+    tower[i].push(' ')
+  }
+}
+return tower.map(floor => floor.join(''))
+}
