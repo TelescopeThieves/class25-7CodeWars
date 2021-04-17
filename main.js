@@ -2067,7 +2067,7 @@ function towerBuilder(nFloors) {
   }
 
  tower = tower.map(floor => floor.split(''))
- 
+
  for(let i = 0; i < tower.length; i++){
   while(tower[i].length < x){
     tower[i].unshift(' ')
@@ -2075,4 +2075,10 @@ function towerBuilder(nFloors) {
   }
 }
 return tower.map(floor => floor.join(''))
+}
+
+
+function take(arr, n) {
+  // Your code here
+  return arr.slice(0,n)
 }
