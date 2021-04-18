@@ -2104,3 +2104,16 @@ function sumDigPow(a, b) {
   
   return list.filter(Number)
 }
+
+function count (string) {  
+  // The function code should be here
+  let hash = {}
+  string.split('').forEach(char => {
+    if(hash[char]){
+      hash[char] += 1
+    } else{
+      hash[char] = 1
+    }
+  })
+   return hash
+}
