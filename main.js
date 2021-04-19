@@ -2082,3 +2082,25 @@ function take(arr, n) {
   // Your code here
   return arr.slice(0,n)
 }
+
+
+function sumDigPow(a, b) {
+  // Your code here
+  let list = []
+  for(let i = a; i <= b; i++){
+    list.push(i)
+  }
+  list = list.map(num => {
+    let x = 0
+    let check = num.toString().split('').map(el => {
+      x++
+      return Number(el)**x
+    }).reduce((a,b) => a + b, 0)
+    if(check === num){
+      return num
+    } else return ''
+      
+    })
+  
+  return list.filter(Number)
+}
