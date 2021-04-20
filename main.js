@@ -2117,3 +2117,17 @@ function count (string) {
   })
    return hash
 }
+
+function solution(string) {
+  let caps = []
+  string.split('').forEach((el,i,a) => {
+    if(el === el.toUpperCase()){
+      caps.push(i)
+    }
+  })
+string = string.split('')
+for(let i = 0; i < caps.length; i++){
+  string[caps[i] - 1] += ' '
+}
+return string.join('')
+}
