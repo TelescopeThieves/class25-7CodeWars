@@ -2131,3 +2131,19 @@ for(let i = 0; i < caps.length; i++){
 }
 return string.join('')
 }
+
+function wave(str){
+  // Code here
+  let wave = []
+  for(let i = 0; i < str.length; i++){
+    if(str[i] !== ' '){
+      let crowd = str.split('').map((el,j,a) => {
+        if(j === i){
+          return el.toUpperCase() 
+        }return el
+      })
+      wave.push(crowd.join(''))
+    }
+  }
+  return wave
+}
