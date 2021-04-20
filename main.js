@@ -2147,3 +2147,16 @@ function wave(str){
   }
   return wave
 }
+
+function toWeirdCase(string){
+  //TODO
+  let words = string.split(' ')
+  words = words.map((el) => {
+    return el.split('').map((l,i,a) => {
+     if(i % 2 === 0){
+       return l.toUpperCase()
+     }else return l.toLowerCase() 
+    }).join('')
+  })
+  return words.join(' ')
+}
