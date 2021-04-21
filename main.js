@@ -2160,3 +2160,116 @@ function toWeirdCase(string){
   })
   return words.join(' ')
 }
+
+
+// 5 string codewars
+// #1 (6kyu)
+function titleCase(title, minorWords) {
+  title = title.split(' ').map((w,i,a) =>{
+    return w.slice(0,1).toUpperCase() + w.slice(1).toLowerCase()
+  })
+
+  if(minorWords){
+    minorWords = minorWords.split(' ').map((w,i,a) =>{
+    return w.slice(0,1).toUpperCase() + w.slice(1).toLowerCase()
+      })
+    title = title.map((w,i,a) => {
+      if(minorWords.includes(w)){
+        return w.toLowerCase()
+      }else return w
+    })
+  }
+  
+  return title.map((w,i,a) => {
+    if(i === 0){
+      return w.slice(0,1).toUpperCase() + w.slice(1)
+    } else return w
+  }).join(' ')
+
+}
+
+// #2 (5kyu)
+function anagrams(word, words) {
+  let anagram = []
+  words.forEach((w,i,a) => {
+    if(w.split('').sort().join('') === word.split('').sort().join('')){
+      anagram.push(w)
+    }
+  })
+  
+  return anagram
+}
+
+// #3 (6kyu)
+
+function inArray(array1,array2){
+  //...
+  let r = []
+  array2.forEach((w) => {
+    array1.forEach(el => {
+      if(w.includes(el)){
+        r.push(el)
+      }
+    })
+  })
+  r = new Set(r)
+  return Array.from(r).sort()
+}
+
+// #4 (6ku)
+function generateHashtag (str) {
+  
+  if(str.length === 0){
+    return false
+  }
+  
+  let result = '#' + str.split(' ').map((w) => {
+    return w.slice(0,1).toUpperCase() + w.slice(1).toLowerCase()
+  }).join('')
+  
+  if(result.length > 140 || result.length <= 1){
+    return false
+  }
+  
+  return result
+}
+
+// #5 (5kyu)
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+  let lowS = s.toLowerCase()
+  let index
+  
+  if(lowS.split('').every(el => el === s[0].toLowerCase()) && lowS.length > 1){
+    return ''
+  }
+  if(s.length === 0){
+    return ''
+  }
+  
+  for(let i = 0; i < lowS.length; i++){
+    if(lowS.indexOf(lowS[i]) === lowS.lastIndexOf(lowS[i])){
+      index = i
+      i = lowS.length
+    }
+  }
+  if(index === undefined){
+    return ''
+  }
+  return s[index]
+}
+
+// or
+
+function firstNonRepeatingLetter(s) {
+  // Add your code here
+  let x = s.toLowerCase()
+  for(let i = 0; i < x.length; i++){
+    if(x.indexOf(x[i]) === x.lastIndexOf(x[i])){
+      return s[i]
+    }
+  }
+  
+  return ''
+}
