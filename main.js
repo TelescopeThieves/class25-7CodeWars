@@ -2273,3 +2273,16 @@ function firstNonRepeatingLetter(s) {
   
   return ''
 }
+
+String.prototype.camelCase=function(){
+  //your code here
+  return this.split(' ').map((w,i,a) => {
+    return w.split('').map((el,j,arr) => {
+      if(j === 0){
+        return el.toUpperCase()
+      } else{
+        return el.toLowerCase()
+      }
+    }).join('')
+  }).join('')
+}
