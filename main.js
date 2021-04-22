@@ -2286,3 +2286,7 @@ String.prototype.camelCase=function(){
     }).join('')
   }).join('')
 }
+
+function digitize(n) {
+  return n.toString().split('').map(Number)
+  }
