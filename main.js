@@ -2290,3 +2290,16 @@ String.prototype.camelCase=function(){
 function digitize(n) {
   return n.toString().split('').map(Number)
   }
+
+function capMe(names) {
+  return names.map(el => el.slice(0,1).toUpperCase() + el.slice(1).toLowerCase())
+  }
+
+  function hasUniqueChars(str){
+    // ...
+    return str.split('').every((char,i,a) => a.indexOf(char) === a.lastIndexOf(char))
+  }
+
+  function searchNames( logins ){
+    return logins.filter((arr,i,a) => arr[0].slice(-1) === '_')
+  }
