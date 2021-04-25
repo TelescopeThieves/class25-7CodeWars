@@ -2303,3 +2303,11 @@ function capMe(names) {
   function searchNames( logins ){
     return logins.filter((arr,i,a) => arr[0].slice(-1) === '_')
   }
+
+  function isLockNessMonster(s) {
+    //FIND THE LOCH NESS MONSTER. SAVE YOUR TREE FIDDY
+    if(s.includes('tree fiddy') || s.includes('three fifty') || s.includes('3.50')){
+       return true
+       } else return false
+  
+  }
