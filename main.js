@@ -2311,3 +2311,19 @@ function capMe(names) {
        } else return false
   
   }
+
+  function cleanString(s) {
+    // 	... your code ...
+      if(s.split('').every(char => char === '#')) return ''
+      let hashes = s.split('').filter(el => el === '#').length
+      for(let i = 0; i < hashes; i++){
+        let x = s.indexOf('#')
+        s = s.split('')
+        s[x - 1] = ''
+        s[x] = ''
+        s = s.join('')
+      }
+      
+    return s
+      
+    };
