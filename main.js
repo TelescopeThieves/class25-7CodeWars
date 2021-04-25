@@ -2327,3 +2327,7 @@ function capMe(names) {
     return s
       
     };
+
+    function broken(x){
+      return x.split('').map(el => el === '1' ? '0' : '1').join('')
+      }
