@@ -2331,7 +2331,12 @@ function capMe(names) {
 function broken(x){
   return x.split('').map(el => el === '1' ? '0' : '1').join('')
   }
-  
+
 function apple(x){
   return x**2 > 1000 ? `It's hotter than the sun!!` : `Help yourself to a honeycomb Yorkie for the glovebox.`
+  }
+function catMouse(x){
+  let jump = x.slice(1,-1).length
+  // console.log(jump)
+  return jump > 3 ? 'Escaped!' : 'Caught!'
   }
