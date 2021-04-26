@@ -2340,3 +2340,14 @@ function catMouse(x){
   // console.log(jump)
   return jump > 3 ? 'Escaped!' : 'Caught!'
   }
+  
+function sabb(s, val, happiness){
+  let total = val + happiness
+  s.split('').forEach(l => {
+    l.toLowerCase()
+    if('sabbatical'.includes(l)){
+      total += 1
+    }
+  })
+  return total > 22 ?  `Sabbatical! Boom!` : `Back to your desk, boy.`
+  }
