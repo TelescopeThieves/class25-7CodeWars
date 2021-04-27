@@ -2340,7 +2340,7 @@ function catMouse(x){
   // console.log(jump)
   return jump > 3 ? 'Escaped!' : 'Caught!'
   }
-  
+
 function sabb(s, val, happiness){
   let total = val + happiness
   s.split('').forEach(l => {
@@ -2351,3 +2351,24 @@ function sabb(s, val, happiness){
   })
   return total > 22 ?  `Sabbatical! Boom!` : `Back to your desk, boy.`
   }
+
+function hist(s) {
+  // your code
+  let hash = {}
+  
+  s.split('').forEach(l => {
+    if(l === 'u' || l === 'w' || l === 'x' || l === 'z'){
+      if(hash[l]){
+        hash[l] += 1
+      } else hash[l] = 1
+    }
+  })
+  
+  let output = []
+  
+  for(const key in hash){
+    hash[key] = `${key}  ${hash[key]}     ${'*'.repeat(hash[key])}\r`
+    output.push(hash[key])
+  }
+  return output.sort().join('').slice(0,-1)
+}
