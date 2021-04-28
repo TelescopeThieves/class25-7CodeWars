@@ -2372,3 +2372,26 @@ function hist(s) {
   }
   return output.sort().join('').slice(0,-1)
 }
+
+
+// 5 array kata
+
+//#1 (7kyu)
+function paul(x){
+  let misery = 0
+  x.forEach(el => {
+    if(el === 'eating') misery++
+    if(el === 'kata') misery += 5
+    if(el === 'Petes kata') misery += 10
+  })
+  if(misery > 100) return 'Miserable!'
+  if(misery >= 70) return 'Sad!'
+  if(misery >= 40) return 'Happy!'
+  return 'Super happy!'
+}
+
+// #2(7ku)
+function smallEnough(a, limit){
+  return a.every(el => el <= limit)
+
+}
