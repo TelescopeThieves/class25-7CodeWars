@@ -2390,8 +2390,22 @@ function paul(x){
   return 'Super happy!'
 }
 
-// #2(7ku)
+// #2 (7ku)
 function smallEnough(a, limit){
   return a.every(el => el <= limit)
 
+}
+// #3 (7kyu)
+function evenLast(numbers) {
+  // Good luck
+  if(numbers.length === 0){
+    return 0
+  }
+  let evens = []
+  numbers.forEach((el,i,a) => {
+    if(i % 2 === 0){
+      evens.push(el)
+    }
+  })
+  return evens.reduce((a,c) => a + c, 0) * numbers[numbers.length - 1]
 }
