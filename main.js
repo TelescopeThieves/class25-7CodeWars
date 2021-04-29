@@ -2409,3 +2409,36 @@ function evenLast(numbers) {
   })
   return evens.reduce((a,c) => a + c, 0) * numbers[numbers.length - 1]
 }
+
+// #4 (7ku)
+
+function meeting(x){
+  if(x.every(r => r === 'X')){
+    return 'None available!'
+  }
+  
+  return x.indexOf('O')
+
+}
+
+// #5 (6kyu)
+
+function twoSum(numbers, target) {
+  // ...
+  let x = 0
+  let y = 0
+  numbers.forEach((num,i,a) => {
+    for(let j = 0; j < a.length; j++){
+      if(j !== i){
+        if(num + a[j] === target){
+          x = i
+          y = j
+        }
+      }
+    }
+  })
+  
+  return [x,y]
+  
+}
+
