@@ -2442,3 +2442,26 @@ function twoSum(numbers, target) {
   
 }
 
+
+function queueTime(customers, n) {
+   if(customers.length === 0){
+    return 0
+  }
+  if(customers.length <= n){
+    return Math.max(...customers)
+  }
+ 
+  let tills = {}
+  for(let i = 1; i <= n; i++){
+     tills[i] = 0
+  }
+
+  let j = 1
+  for(let i = 0; i < customers.length; i++){
+    let x = Object.entries(tills).sort(([ ,v1], [ ,v2]) => v1 - v2)    
+    tills[x[0][0]] += customers[i]
+  }
+  let y = Object.entries(tills).sort(([ ,v1], [ ,v2]) => v2 - v1)
+  return y[0][1]
+}
+
