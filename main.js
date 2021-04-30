@@ -2465,3 +2465,33 @@ function queueTime(customers, n) {
   return y[0][1]
 }
 
+
+
+// Array.prototype.square = function(){
+//   return this.map(num => num**2)
+//   }
+
+// Array.prototype.cube = function(){
+//   return this.map(num => num**3)
+//   }
+// Array.prototype.sum = function(){
+//   return this.reduce((a,c) => a + c,0)
+//   }
+// Array.prototype.average = function(){
+//   let length = this.length
+//   let total = this.reduce((a,c) => a + c,0)
+//   return total / length
+//   }
+// Array.prototype.even = function(){
+//   return this.map(el => {
+//     if(el%2===0) return el
+//     else return ''
+//   }).filter(el => el !== '')
+//   }
+// Array.prototype.odd = function(){
+//   return this.map(el => {
+//     if(el%2!==0) return el
+//     else return ''
+//   }).filter(el => el !== '')
+//   }
+
