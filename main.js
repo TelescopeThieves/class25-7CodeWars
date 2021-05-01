@@ -2495,7 +2495,7 @@ function queueTime(customers, n) {
 //   }).filter(el => el !== '')
 //   }
 
+// array kyu
 function superSize(num){
   return Number(num.toString().split('').sort((a,b) => b - a).join(''))
 }
-
