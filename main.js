@@ -2499,3 +2499,18 @@ function queueTime(customers, n) {
 function superSize(num){
   return Number(num.toString().split('').sort((a,b) => b - a).join(''))
 }
+
+var flatten = function (array){
+  // TODO: Program me
+  let flattened = []
+  
+  array.forEach(el => {
+    if(Array.isArray(el)){
+      el.forEach(a => flattened.push(a))
+    }else{
+      flattened.push(el)
+    }
+  })
+  
+  return flattened
+}
