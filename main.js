@@ -2514,3 +2514,17 @@ var flatten = function (array){
   
   return flattened
 }
+
+multiplicationTable = function(size) {
+  // insert code here
+  let home = []
+  let matrix = []
+  for(let i = 1; i <= size; i++){
+    home.push(i)
+  }
+  
+  for(let i = 1; i <= size; i++){
+    matrix.push(home.map(el => el * i))
+  }
+ return matrix
+}
