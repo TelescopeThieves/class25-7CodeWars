@@ -2528,3 +2528,24 @@ multiplicationTable = function(size) {
   }
  return matrix
 }
+
+function rank(st, wt, n) {
+  // your code
+if(st.length === 0) return 'No participants'
+let hash = {}
+st.split(',').forEach((name,i) => {
+  hash[name] = name.split('').reduce((a,c) => +a + (c.toLowerCase().charCodeAt(0) - 96),0)
+  hash[name] += name.length
+  hash[name] *= wt[i]
+})
+let sort = Object.keys(hash).sort((a,b) =>{
+if(hash[a] === hash[b]){
+  if(a < b) return -1
+  if(a > b) return 1
+}else return hash[b] - hash[a]
+})
+// console.log(sort)
+
+return sort[n-1] ? sort[n-1] : 'Not enough participants'
+
+}
