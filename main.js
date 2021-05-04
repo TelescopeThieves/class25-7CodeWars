@@ -2574,3 +2574,19 @@ function spinWords(string){
     } else return word
   }).join(' ')
 }
+
+function solve(arr){  
+  //code
+    let pos = []
+    arr.forEach(el => {
+      let count = 0
+      el.toLowerCase().split('').forEach((l,i,a) => {
+        if((l.charCodeAt(0) - 96) == (i+1)){
+          count++
+        }
+      })
+      pos.push(count)
+    })
+    
+    return pos
+  };
