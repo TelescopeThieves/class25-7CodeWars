@@ -2549,3 +2549,19 @@ if(hash[a] === hash[b]){
 return sort[n-1] ? sort[n-1] : 'Not enough participants'
 
 }
+
+function strToHash(str){
+  // ...
+  if(!str) return {}
+  let hash = {}
+  let arr = str.split(',').map(el => {
+    return el.trim().split('=')
+  })
+
+  arr.forEach( el => {
+    let [key, val] = el
+    hash[key] = +val
+  })
+
+  return hash
+}
