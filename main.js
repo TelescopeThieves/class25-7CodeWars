@@ -2632,3 +2632,13 @@ function solve(arr){
       if(toReturn === 'value') return Math.min(...arr)
       return arr.indexOf(Math.min(...arr))
     }
+
+    function findDup( arr ){
+      let duplicateValue
+      arr.forEach((el,i,a) => {
+        if(a.indexOf(el) !== a.lastIndexOf(el)){
+          duplicateValue = el
+        }
+      })
+      return duplicateValue;
+    }
