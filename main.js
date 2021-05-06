@@ -2642,3 +2642,15 @@ function solve(arr){
       })
       return duplicateValue;
     }
+
+    function pairs(ar){
+      //..
+       if(ar.length % 2 !== 0) ar.pop()
+       let count = 0
+       ar.forEach((el,i,a) => {
+         if(i % 2 === 0 && Math.abs(el - a[i+1]) == 1){
+           count++
+         }
+       })
+       return count
+     };
