@@ -2614,3 +2614,21 @@ function solve(arr){
       }
       return count === 0 ? arr : dirReduc(arr);
     }
+
+    function getMissingElement(superImportantArray){
+      //TODO
+      let missing
+      superImportantArray.sort((a,b) => a - b).forEach((el,i,a) =>{
+        let check = el + 1
+        if(check !== a[i+1] && el < 9){
+          missing = check
+        }
+      })
+      return missing ? missing : 0
+    }
+
+    function min(arr, toReturn) {
+      // TODO
+      if(toReturn === 'value') return Math.min(...arr)
+      return arr.indexOf(Math.min(...arr))
+    }
