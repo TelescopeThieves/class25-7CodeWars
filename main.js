@@ -2677,3 +2677,19 @@ function solve(arr){
       
       return nums - strings
     }
+
+    function calc(x){
+  
+      let total1 = x.split('').map(el => {
+        let char = el.charCodeAt(0)
+        return char.toString()
+      }).join('')
+      
+      let total2 = total1.split('').map(el => {
+        if(el === '7'){
+          return '1'
+        }else return el
+      }).join('')
+      
+      return total1.split('').map(Number).reduce((acc,c) => acc + c, 0) - total2.split('').map(Number).reduce((acc,c) => acc + c, 0)
+    }
