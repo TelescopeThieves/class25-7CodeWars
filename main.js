@@ -2665,3 +2665,15 @@ function solve(arr){
       }
       return minSum.reduce((acc,c) => acc + c, 0)
     }
+
+    function divCon(x){
+      let strings = 0
+      let nums = 0
+      x.forEach(el => {
+        if(Number.isInteger(el)){
+          nums += el
+        } else strings += Number(el)
+      })
+      
+      return nums - strings
+    }
