@@ -2440,7 +2440,7 @@ function twoSum(numbers, target) {
   
   return [x,y]
   
-}
+} 
 
 
 function queueTime(customers, n) {
@@ -2654,3 +2654,14 @@ function solve(arr){
        })
        return count
      };
+
+     function minSum(arr) {
+      // your code here
+      let minSum = []
+      arr = arr.sort((a,b) => a - b)
+      for(let i = 0; i < arr.length / 2; i++){
+        let x = arr[i] * arr[arr.length - (i+1)]
+        minSum.push(x)
+      }
+      return minSum.reduce((acc,c) => acc + c, 0)
+    }
