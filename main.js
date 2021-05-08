@@ -2701,3 +2701,16 @@ function solve(arr){
       
       return a.length < b.length ? a+bR+a : b+aR+b
     }
+
+    function countDevelopers(list) {
+      // your awesome code here :)
+      let euros = 0
+      
+      list.forEach(el => {
+        if(el.continent === 'Europe' && el.language === 'JavaScript'){
+         euros++
+        }
+      })
+      
+      return euros
+    }
