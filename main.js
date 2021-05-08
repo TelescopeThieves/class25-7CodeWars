@@ -2693,3 +2693,11 @@ function solve(arr){
       
       return total1.split('').map(Number).reduce((acc,c) => acc + c, 0) - total2.split('').map(Number).reduce((acc,c) => acc + c, 0)
     }
+
+    function shorter_reverse_longer(a,b){
+  
+      let bR = b.split('').reverse().join('')
+      let aR = a.split('').reverse().join('')
+      
+      return a.length < b.length ? a+bR+a : b+aR+b
+    }
