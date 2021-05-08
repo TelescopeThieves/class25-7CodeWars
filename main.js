@@ -2714,3 +2714,10 @@ function solve(arr){
       
       return euros
     }
+
+    var FilterString = function(value) {
+      //Complete this function :)
+      return Number(value.split('').filter(el => {
+        if(el === '0' || Number(el)) return el
+      }).join(''))
+    }
