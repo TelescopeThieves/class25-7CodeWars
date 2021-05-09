@@ -2739,3 +2739,20 @@ function solve(arr){
     let x = str.split('').reduce((acc,c) => acc + Number(c),0)
     return x % 3 === 0
   }
+
+  function solve(a,b){
+    //..
+     let s1 = []
+     let s2 = []
+     a.split('').forEach(el => {
+       if(!b.split('').includes(el)){
+         s1.push(el)
+       }
+     })
+       b.split('').forEach(el => {
+       if(!a.split('').includes(el)){
+         s2.push(el)
+       }
+     })
+     return s1.concat(s2).join('')
+   };
