@@ -2734,3 +2734,8 @@ function solve(arr){
     return x.every(el => arr.includes(el))
     
   }
+
+  function divisibleByThree(str){
+    let x = str.split('').reduce((acc,c) => acc + Number(c),0)
+    return x % 3 === 0
+  }
