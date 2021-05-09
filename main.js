@@ -2721,3 +2721,16 @@ function solve(arr){
         if(el === '0' || Number(el)) return el
       }).join(''))
     }
+
+    function containAllRots(strng, arr) {
+      // your code
+    if(strng === '') return true
+    let x = []
+    let y = strng
+    for(let i = 0; i < strng.length; i++){
+      x.push(y)
+      y = y.slice(-1)+y.slice(0,-1)
+    }
+    return x.every(el => arr.includes(el))
+    
+  }
