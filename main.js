@@ -2756,3 +2756,12 @@ function solve(arr){
      })
      return s1.concat(s2).join('')
    };
+
+   function greetDevelopers(list) {
+    // thank you for checking out my kata :)
+  
+    list.forEach(function(el){
+      el.greeting = `Hi ${el.firstName}, what do you like the most about ${el.language}?`
+    })
+    return list
+  }
