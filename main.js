@@ -2785,3 +2785,61 @@ function solve(arr){
       }
     })
   }
+
+  function isSameLanguage(list) {
+    // thank you for checking out the Coding Meetup kata :)
+    let langs = []
+    list.forEach(el => {
+      langs.push(el.language)
+    })
+    
+    return langs.every(lang => lang === langs[0])
+  }
+
+  // or 
+  function isSameLanguage(list) {
+    return list.every(e => e.language === list[0].language);
+  }
+
+  function orderFood(list) {
+    // thank you for checking out the Coding Meetup kata :)
+    let menu = {}
+    
+    list.forEach(el => {
+      if(menu[el.meal]){
+        menu[el.meal] += 1
+      } else menu[el.meal] = 1
+    })
+    
+    return menu
+  }
+
+  function isAgeDiverse(list) {
+    // thank you for checking out the Coding Meetup kata :)
+    let hash = {
+      'teens': 0,
+      'twenties': 0,
+      'thirties': 0,
+      'forties': 0,
+      'fifties': 0,
+      'sixties': 0,
+      'seventies': 0,
+      'eighties': 0,
+      'nineties': 0,
+      'centenarian': 0
+    }
+    list.forEach(el => {
+      if(el.age > 99) return hash['centenarian']++
+      if(el.age > 89) return hash['nineties']++
+      if(el.age > 79) return hash['eighties']++
+      if(el.age > 69) return hash['seventies']++
+      if(el.age > 59) return hash['sixties']++
+      if(el.age > 49) return hash['fifties']++
+      if(el.age > 39) return hash['forties']++
+      if(el.age > 29) return hash['thirties']++
+      if(el.age > 19) return hash['twenties']++
+      if(el.age > 12) return hash['teens']++
+    })
+    
+    return Object.keys(hash).every(el => hash[el] > 0)
+  }
