@@ -2776,4 +2776,12 @@ function solve(arr){
     
     return table.slice(0,-1)
   }
-  
+
+  function findAdmin(list, lang) {
+    // thank you for checking out the Coding Meetup kata :)
+   return list.filter((el) => {
+      if(el.language === lang && el.githubAdmin === 'yes'){
+        return el
+      }
+    })
+  }
