@@ -2843,3 +2843,12 @@ function solve(arr){
     
     return Object.keys(hash).every(el => hash[el] > 0)
   }
+
+  function switcher(x){
+    let alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
+    let str = ''
+    x.forEach(el => {
+      str += alpha[el]
+    })
+    return str
+    }
