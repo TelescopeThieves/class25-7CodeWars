@@ -2852,3 +2852,16 @@ function solve(arr){
     })
     return str
     }
+
+  function gordon(a){
+    let vowels = 'EIOU'
+    return a.split(' ').map(el => {
+      el = el.toUpperCase()
+      el += '!!!!'
+      return el.split('').map(l => {
+        if(l === 'A') return '@'
+        if(vowels.includes(l)) return '*'
+        return l
+      }).join('')
+    }).join(' ')
+  }
