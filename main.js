@@ -2865,3 +2865,25 @@ function solve(arr){
       }).join('')
     }).join(' ')
   }
+
+
+  function sortTransform(a){
+    let str = []
+    let word = [a[0],a[1],a[a.length -2],a[a.length -1]].map(el => String.fromCharCode(el)).join('')
+    str.push(word)
+    
+    a.sort((x,y) => x - y)
+    word = [a[0],a[1],a[a.length -2],a[a.length -1]].map(el => String.fromCharCode(el)).join('')
+    str.push(word)
+      
+    a.sort((x,y) => y - x)
+    word = [a[0],a[1],a[a.length -2],a[a.length -1]].map(el => String.fromCharCode(el)).join('')
+    str.push(word)
+    
+    a = a.map(el => String.fromCharCode(el)).sort()
+    word = [a[0],a[1],a[a.length -2],a[a.length -1]].join('')
+    str.push(word)
+    
+    
+    return str.join('-')
+    }
