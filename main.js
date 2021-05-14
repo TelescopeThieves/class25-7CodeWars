@@ -2892,3 +2892,8 @@ function solve(arr){
       //..
   return arr.filter((el,i) => i === arr.lastIndexOf(el))
   }
+
+  function validSpacing(s) {
+    // write your code here
+    return s.trim() === s && !s.includes('  ')
+  }
