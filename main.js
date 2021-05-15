@@ -2919,3 +2919,18 @@ function alan(x){
   
     return alan.every(el => x.includes(el)) ? 'Smell my cheese you mother!' : 'No, seriously, run. You will miss it.'
   }
+
+
+  function getAverageAge(list) {
+    // thank you for checking out the Coding Meetup kata :)
+    let totalAge = 0
+    let count = 0
+    
+    list.forEach(el => {
+      totalAge += el.age
+      count++
+    })
+    
+    
+    return Math.round(totalAge / count)
+  }
