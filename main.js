@@ -2897,3 +2897,19 @@ function solve(arr){
     // write your code here
     return s.trim() === s && !s.includes('  ')
   }
+
+
+  function moveTen(s){
+  
+    return s.split('').map(l => {
+      let code = l.charCodeAt(0)
+      for(let i = 0; i< 10; i++){
+        if(code === 122){
+          code = 96
+        } 
+        code += 1
+      }
+      return String.fromCharCode(code)
+    }).join('')
+  
+  }
