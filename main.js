@@ -2934,3 +2934,29 @@ function alan(x){
     
     return Math.round(totalAge / count)
   }
+
+  function stockList(listOfArt, listOfCat){
+
+    if(listOfArt.length === 0 || listOfCat.length === 0) return ''
+    
+    let hash = {}
+    
+    listOfCat.forEach(el => {
+      hash[el] = 0
+    })
+    
+    listOfArt.forEach(el => {
+      let num = Number(el.split(' ')[1])
+      if(listOfCat.includes(el[0])){
+        hash[el[0]] += num
+      }
+    })
+      
+    let string = []
+    
+    Object.keys(hash).forEach(el => {
+      string.push(`(${el} : ${hash[el]})`)  
+    })
+    
+    return string.join(' - ')
+  }
