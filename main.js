@@ -3124,3 +3124,8 @@ function alan(x){
       if(n < 2) return 0
       return (n - 1) * 2
     }
+
+    function copyList(l){
+      //your code here
+      return l.slice(0)
+    }
