@@ -2984,3 +2984,11 @@ function alan(x){
   var TempleStrings = function(obj, feature) {
     return `${obj} are ${feature}`
   }
+
+  function isVow(a){
+    let vowels = ['a', 'e', 'i', 'o', 'u']
+    return a.map(el => {
+      if(vowels.includes(String.fromCharCode(el))) return String.fromCharCode(el)
+      else return el
+    })
+    }
