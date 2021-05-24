@@ -2974,3 +2974,9 @@ function alan(x){
     
     return result
   }
+
+  function mouthSize(animal) {
+    // code here
+    let x = animal.toLowerCase()
+    return x === 'alligator' ? 'small' : 'wide'
+  }
