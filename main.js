@@ -2980,3 +2980,7 @@ function alan(x){
     let x = animal.toLowerCase()
     return x === 'alligator' ? 'small' : 'wide'
   }
+
+  var TempleStrings = function(obj, feature) {
+    return `${obj} are ${feature}`
+  }
