@@ -2960,3 +2960,17 @@ function alan(x){
     
     return string.join(' - ')
   }
+// 5 string katas
+  function shiritori(words) {
+    //insert code
+    if(words.length === 0 || words[0] === '') return []
+    
+    let result = [words[0]]
+    for(let i = 1; i < words.length; i++){
+      if(words[i][0] === words[i - 1].slice(-1)){
+        result.push(words[i])
+      } else i = words.length
+    }
+    
+    return result
+  }
