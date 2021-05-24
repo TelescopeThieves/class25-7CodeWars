@@ -2981,9 +2981,7 @@ function alan(x){
     return x === 'alligator' ? 'small' : 'wide'
   }
 
-  var TempleStrings = function(obj, feature) {
-    return `${obj} are ${feature}`
-  }
+ let TempleStrings = (obj, feature) => `${obj} are ${feature}`
 
   function isVow(a){
     let vowels = ['a', 'e', 'i', 'o', 'u']
@@ -2992,3 +2990,6 @@ function alan(x){
       else return el
     })
     }
+  function check(a,x){
+    return a.includes(x)
+  };
