@@ -3003,3 +3003,7 @@ function alan(x){
     })
     return hash
   }
+
+  function fireFight(s){
+    return s.replace(/Fire/g, '~~')
+  }
