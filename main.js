@@ -2993,3 +2993,13 @@ function alan(x){
   function check(a,x){
     return a.includes(x)
   };
+
+  function countLanguages(list) {
+    // thank you for checking out the Coding Meetup kata :)
+    let hash = {}
+    list.forEach(obj => {
+      if(hash[obj.language]) hash[obj.language]++
+      else hash[obj.language] = 1
+    })
+    return hash
+  }
