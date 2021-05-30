@@ -3007,3 +3007,21 @@ function alan(x){
   function fireFight(s){
     return s.replace(/Fire/g, '~~')
   }
+
+  function solve(s){
+    let len = 0
+    let vowels = 'aeiou'
+    s.split('').forEach((l,i,a) => {
+      let sub = []
+      let count = 1
+      if(vowels.includes(l)){
+        sub.push(l)
+      }
+      while(vowels.includes(a[i+count])){
+        sub.push(a[i+count])
+        count++
+      }
+      return sub.length > len ? len = sub.length : len = len
+    })
+    return len
+  }
