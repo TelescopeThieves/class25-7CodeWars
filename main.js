@@ -3031,3 +3031,10 @@ function alan(x){
     if(name.length <= 2) return [name]
     else return [name, name.slice(0,2)]
   }
+
+  function tidyNumber(n){
+    //your code here
+    let decrease = Number(n.toString().split('').sort((a,b) => a - b).join(''))
+    console.log(n, decrease)
+    return n === decrease
+  }
