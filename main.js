@@ -3038,3 +3038,20 @@ function alan(x){
     console.log(n, decrease)
     return n === decrease
   }
+
+
+  const palindromePairs = words => {
+    // your code here
+    const pairs = []
+    
+    words.forEach((w,i,a) => {
+       
+      for(let j = 0; j < words.length; j++){
+        let x = `${w}${words[j]}`
+        let y = x.split('').reverse().join('')
+        if(i !== j && x === y) pairs.push([i,j])
+        }
+      
+    })
+    return pairs
+  }
