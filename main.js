@@ -3040,11 +3040,11 @@ function alan(x){
   }
 
 
-  const palindromePairs = words => {
+  const palindromePairs = (words) => {
     // your code here
     const pairs = []
     
-    words.forEach((w,i,a) => {
+    words.forEach((w,i) => {
        
       for(let j = 0; j < words.length; j++){
         let x = `${w}${words[j]}`
@@ -3052,6 +3052,16 @@ function alan(x){
         if(i !== j && x === y) pairs.push([i,j])
         }
       
-    })
+      })
     return pairs
+  }
+  
+  function vowelIndices(word){
+    //your code here
+    let i = []
+    let vowels = 'aeiouyAEIOUY'
+    word.split('').forEach((l,x) => {
+      if(vowels.includes(l)) i.push(x+1)
+    })
+    return i
   }
