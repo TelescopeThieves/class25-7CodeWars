@@ -3065,3 +3065,20 @@ function alan(x){
     })
     return i
   }
+
+  function change(string){
+
+    let binary = ''
+    let hash = {}
+    string.split('').forEach(el => {
+      if(!hash[el]) hash[el] = el.toLowerCase().charCodeAt(0) - 96
+    })
+    for(let i = 0; i < 26; i++){
+      let x = '0'
+      Object.keys(hash).forEach(key => {
+       if(hash[key] === i + 1) x = '1'
+     })
+      binary += x
+    }
+     return binary
+    }
