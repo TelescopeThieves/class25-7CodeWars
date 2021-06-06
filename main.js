@@ -3082,3 +3082,7 @@ function alan(x){
     }
      return binary
     }
+
+    function toNumberArray(stringarray){
+      return stringarray.map(Number)
+    }
