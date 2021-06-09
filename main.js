@@ -3086,3 +3086,16 @@ function alan(x){
     function toNumberArray(stringarray){
       return stringarray.map(Number)
     }
+
+    function kaprekarSplit(n){
+      //write code here...
+      if(n === 1) return 0
+      let nums = [...(n**2).toString()]
+      let index = -1
+      for(let i = 0; i < nums.length; i++){
+        let x = nums.slice(0,i).reduce((a,c) => eval(a + c),'0')
+        let y = nums.slice(i).reduce((a,c) => eval(a + c), '0')
+        if(x + y === n) index = i
+      }
+      return index
+    }
