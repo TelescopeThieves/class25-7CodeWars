@@ -3142,3 +3142,21 @@ function alan(x){
     function last(arr){
       return arr[arr.length - 1]
     } 
+
+    function cubeOdd(arr) {
+
+      // insert code here >.<
+      if(arr.every(num => Number.isInteger(num))){
+        
+        let oddSum = 0
+        arr = arr.map(num => {
+          num = num**3
+          if(num % 2 !== 0){
+            oddSum += num
+          }
+        })
+      
+        return oddSum 
+        }
+      return undefined
+      }
