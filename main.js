@@ -3104,3 +3104,17 @@ function alan(x){
       // thank you for checking out my kata :)
       return list.some(dev => dev.language === 'Ruby')
     }
+
+    function moveVowel(input) {
+      const vowels = 'aeiou'
+      let inputVowels = ''
+      let cons = input.split('').map(l => {
+        if(vowels.includes(l)) {
+          inputVowels += l
+          return ''
+        }
+        return l
+      }).filter(j => j != '').join('')
+      return cons + inputVowels
+      
+    }
