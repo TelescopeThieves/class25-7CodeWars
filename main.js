@@ -3160,3 +3160,17 @@ function alan(x){
         }
       return undefined
       }
+
+      function solve(arr){
+        //..
+      let result = 0
+      arr.forEach(num => {
+        if(num < 0 && !arr.includes(Math.abs(num))){
+          result = num
+        } else if(num >= 0 && !arr.includes(-num)){
+          result = num
+        }
+      })
+      
+      return result
+    };
