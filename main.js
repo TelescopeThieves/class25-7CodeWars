@@ -3174,3 +3174,16 @@ function alan(x){
       
       return result
     };
+
+    function cookingTime(eggs) {
+      // TODO
+      if(eggs === 0) return 0
+      if(eggs < 9) return 5
+      let time = 0
+      let count = eggs
+      while(count > 0){
+        time += 5
+        count -= 8
+      }
+      return time
+    }
