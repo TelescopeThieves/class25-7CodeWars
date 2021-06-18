@@ -3207,3 +3207,30 @@ function alan(x){
       return arr
       
     }
+
+    function reverseNumber(n) {
+      // ...
+     let revNum = Number(n.toString().split('').filter(n => n !== '-').reverse().join(''))
+     return n < 0 ? -revNum : revNum
+    }
+
+
+    function growingPlant(upSpeed, downSpeed, desiredHeight) {
+      //coding and coding..
+      let days = 0
+      let currentHeight = 0
+      
+      if(upSpeed  > desiredHeight) return 1
+      
+      for(let i = 0; currentHeight < desiredHeight; i++){
+        currentHeight += upSpeed
+        days += 1
+        
+        if(currentHeight < desiredHeight){
+          currentHeight -= downSpeed
+        }
+      }
+      
+      return days
+      
+    }
