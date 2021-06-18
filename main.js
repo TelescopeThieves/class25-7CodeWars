@@ -3187,3 +3187,23 @@ function alan(x){
       }
       return time
     }
+
+    var orderedCount = function (text) {
+      // Implement me!
+      let arr = []
+      
+      let unique = Array.from(new Set([...text]))
+      
+      unique.forEach((l,i) => {
+          let count = 0
+          for(let j = 0; j < text.length; j++){
+            if(text[j] === l){
+              count++
+            }
+          }
+          arr.push([l,count])
+      })
+      
+      return arr
+      
+    }
