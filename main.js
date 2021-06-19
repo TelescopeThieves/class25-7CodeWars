@@ -3234,3 +3234,14 @@ function alan(x){
       return days
       
     }
+
+    function repeats(arr){
+      //..
+        let sum = 0
+         
+        arr.forEach(num => {
+          if(arr.indexOf(num) === arr.lastIndexOf(num)) sum += num
+        })
+        
+        return sum
+      };
