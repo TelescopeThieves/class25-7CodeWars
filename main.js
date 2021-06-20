@@ -3247,7 +3247,7 @@ function alan(x){
       };
 
       function foldTo(distance) {
-        if(distance <= 0) return null
+        if(distance < 0) return null
         let folds = 0
         let paper = 0.0001
         
@@ -3257,3 +3257,13 @@ function alan(x){
         }
         return folds
       }
+
+      function halvingSum(n) {
+        let result = n
+        let divider = 2
+        while(Math.ceil(n/divider) > 1){
+          result += Math.floor(n/divider)
+          divider *= 2
+        }
+        return result
+    }
