@@ -3245,3 +3245,15 @@ function alan(x){
         
         return sum
       };
+
+      function foldTo(distance) {
+        if(distance <= 0) return null
+        let folds = 0
+        let paper = 0.0001
+        
+        while(distance > paper){
+          paper *= 2
+          folds++
+        }
+        return folds
+      }
