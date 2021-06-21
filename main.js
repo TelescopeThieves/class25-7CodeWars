@@ -3267,3 +3267,12 @@ function alan(x){
         }
         return result
     }
+
+    function menFromBoys(arr){
+      //your code here
+      let even = arr.filter(num => Math.abs(num % 2) === 0).sort((a,b) => a - b)
+      let odd = arr.filter(num => Math.abs(num % 2) !== 0).sort((a,b) => b - a)
+      
+      return Array.from(new Set([...even,...odd]))
+    
+    }
