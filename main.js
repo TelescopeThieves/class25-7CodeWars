@@ -3281,7 +3281,25 @@ function alan(x){
       let last = arguments[arguments.length - 1]
       return last[last.length - 1] || last
     }
-    
+
     Dog.prototype.bark = function(){
       return 'Woof!'
-    }    
+    }
+    
+    function maxRot(n) {
+      // your code
+      let len = n.toString().length
+      let rot = []
+      let x = n
+      for(let i = 0; i < len; i++){
+        rot.push(x)
+        x = x.toString().split('')
+        x.push(x[i])
+        x = x.map((num,j) => {
+          if(j === i) return ''
+          else return num
+        }).join('')
+        x = Number(x)
+      }
+      return Math.max(...rot)
+    }
